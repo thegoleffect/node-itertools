@@ -17,7 +17,9 @@ class Itertools
     throw "iterable must be a string or array" if not (iterable instanceof Array)
     pool = iterable.slice(0)
     n = pool.length
-    throw "r cannot be larger than length of array" if r > n
+    throw "r must be an integer" if typeof r != 'number' or r % 1 != 0
+    throw "r must be smaller than iterable length" if r > n # Python returns [] for this case, wonder why
+    throw "r must be non-negative" if r < 0
     
     indices = [0..(n-1)]
     cycles = [n..(n-r+1)]

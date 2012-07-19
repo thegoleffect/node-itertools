@@ -30,11 +30,21 @@ describe("Itertools", () ->
       done()
     )
     
-    it("should not work for invalid inputs", (done) ->
+    it("should not work for invalid iterable inputs", (done) ->
       invalids = [1, 1.5, {x:1}, true, null, undefined]
       for x in invalids
         (() ->
           itertools.permutationsSync(x)
+        ).should.throw()
+      done()
+    )
+    
+    it("should not work for invalid r inputs", (done) ->
+      arr = "ABCD"
+      invalids = [10, -5, 1.5, 'a', {x:1}, [1]]
+      for x in invalids
+        (() ->
+          itertools.permutationsSync(arr, x)
         ).should.throw()
       done()
     )
