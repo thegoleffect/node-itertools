@@ -1,7 +1,7 @@
 {
   "name": "itertools",
   "description": "functions for efficient looping (like python's itertools)",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Van Nguyen <thegoleffect@gmail.com>",
   "repository": "git://github.com/thegoleffect/node-itertools",
   "main": "index",
