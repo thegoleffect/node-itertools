@@ -28,5 +28,7 @@ THEN
 
 Since this is a new port, these are the only functions completed thus far:
 
+
 itertools.permutationsSync(__iterable[, r]__)
-  Returns list of r length permutations of elements in the __iterable__.
+
+&nbsp;&nbsp;&nbsp;&nbsp;Returns list of r length permutations of elements in the __iterable__.
