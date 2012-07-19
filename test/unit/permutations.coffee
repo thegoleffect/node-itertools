@@ -3,13 +3,30 @@ itertools = require("../..") #
 
 describe("Itertools", () ->
   describe("#permutationsSync", () ->
-    it("should work for known parameters", (done) ->
+    it("should work for known iterable string", (done) ->
       # permutations('ABCD', 2) --> AB AC AD BA BC BD CA CB CD DA DB DC
       arr = 'ABCD'
       k = 2
-      expected = ['AB', 'AC', 'AD', 'BA', 'BC', 'BD', 'CA', 'CB', 'CD', 'DA', 'DB', 'DC']
-
-      itertools.permutationsSync(arr, k).should.equal(expected)
+      expected = [['A', 'B'], ['A', 'C'], ['A', 'D'], ['B', 'A'], ['B', 'C'], ['B', 'D'], ['C', 'A'], ['C', 'B'], ['C', 'D'], ['D', 'A'], ['D', 'B'], ['D', 'C']]
+      result = itertools.permutationsSync(arr, k)
+      
+      result.length.should.equal(expected.length)
+      for n in [0..expected.length - 1]
+        result.should.includeEql(expected[n])
+        
+      done()
+    )
+    
+    it("should work for known iterable numbers", (done) ->
+      arr = [0..2]
+      expected = [[0, 1, 2], [0, 2, 1], [1, 0, 2], [1, 2, 0], [2, 0, 1], [2, 1, 0]]
+      
+      result = itertools.permutationsSync(arr)
+      
+      result.length.should.equal(expected.length)
+      for n in [0..expected.length - 1]
+        result.should.includeEql(expected[n])
+        
       done()
     )
   )
