@@ -30,4 +30,5 @@ Since this is a new port, these are the only functions completed thus far:
 
 
 itertools.permutationsSync(_iterable[, r]_)
+
 &nbsp;&nbsp;&nbsp;&nbsp;Returns list of r length permutations of elements in the _iterable_.
