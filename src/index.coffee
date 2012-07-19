@@ -1,3 +1,4 @@
+# factorial() taken from: http://stackoverflow.com/questions/3959211/fast-factorial-function-in-javascript
 _memofactorial = new Array()
 factorial = (n) ->
   return 1 if n == 0 or n == 1
