@@ -1,14 +1,17 @@
 {
   "name": "itertools",
   "description": "functions for efficient looping (port of python's itertools)",
-  "version": "0.0.2a",
+  "version": "0.0.3pre",
   "author": "Van Nguyen <thegoleffect@gmail.com>",
   "repository": "git://github.com/thegoleffect/node-itertools",
   "main": "index",
   "keywords": [
-    "cartesian product",
-    "combinations",
+    "permutation",
     "permutations",
+    "cartesian product",
+    "combination",
+    "combinations",
+    "itertool",
     "itertools",
     "node-itertools"
   ],
