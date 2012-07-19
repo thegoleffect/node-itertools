@@ -29,5 +29,14 @@ describe("Itertools", () ->
         
       done()
     )
+    
+    it("should not work for invalid inputs", (done) ->
+      invalids = [1, 1.5, {x:1}, true, null, undefined]
+      for x in invalids
+        (() ->
+          itertools.permutationsSync(x)
+        ).should.throw()
+      done()
+    )
   )
 )
