@@ -45,4 +45,26 @@ class Itertools
           break
     return perms
 
+  combinationsSync: (iterable, r) ->
+    pool = iterable
+    n = pool.length
+    return [] unless r <= n
+    indices = [0...r]
+    result = []
+    doYield = ->
+      result.push(pool[i] for i in indices)
+    doYield()
+    while true
+      broken = false
+      for i in [0...r].reverse()
+        if indices[i] != i + n - r
+          broken = true
+          break
+      if not broken
+        return result
+      indices[i]++
+      for j in [i+1...r]
+        indices[j] = indices[j-1] + 1
+      doYield()
+
 module.exports = exports = new Itertools();
